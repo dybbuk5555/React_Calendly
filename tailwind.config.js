@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   presets: [],
   darkMode: 'media', // or 'class'
@@ -13,6 +13,7 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px',
       'map': '4000px',
+      'viewport': '80vh',
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
@@ -334,7 +335,7 @@ module.exports = {
       '1/5': '20%',
       '2/5': '40%',
       '3/5': '60%',
-      '4/5': '80%',
+      '4/5': '80vh',
       '1/6': '16.666667%',
       '2/6': '33.333333%',
       '3/6': '50%',
@@ -555,6 +556,7 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
+      container: '80vh',
     }),
     inset: ({ theme }) => ({
       auto: 'auto',
@@ -930,6 +932,7 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
+      map: '4000px',
     }),
     willChange: {
       auto: 'auto',
