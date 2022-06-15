@@ -10,7 +10,6 @@ class App extends Component {
         this.prismaZoom = createRef()
         this.state = {
             zoom: 1,
-
         }
     }
 
@@ -22,34 +21,9 @@ class App extends Component {
         this.prismaZoom.current.zoomOut(1)
     }
 
-    onClickOnZoomIn = () => {
-        this.prismaZoom.current.zoomIn(1)
-    }
-
-    onDoubleClickOnCard = (event) => {
-        event.preventDefault()
-        event.stopPropagation()
-
-        const zoneRect = event.currentTarget.getBoundingClientRect()
-        const layoutRect = event.currentTarget.parentNode.getBoundingClientRect()
-
-
-        const zoom = this.prismaZoom.current.getZoom()
-
-        if (zoom > 1) {
-            this.prismaZoom.current.reset()
-            return
-        }
-
-        const [relX, relY] = [(zoneRect.left - layoutRect.left) / zoom, (zoneRect.top - layoutRect.top) / zoom]
-        const [relWidth, relHeight] = [zoneRect.width / zoom, zoneRect.height / zoom]
-        this.prismaZoom.current.zoomToZone(relX, relY, relWidth, relHeight)
-    }
-
     render() {
         return (
             <>
-
                 <div className="p-6">
                     <ScrollBoost scrollMode="transform" emulateScroll >
                         {({ viewport, scrollbooster }) => (
@@ -60,7 +34,7 @@ class App extends Component {
                                             onClick={(event) => {
                                                 if (scrollbooster) {
                                                     const layoutRect = event.currentTarget.parentNode.getBoundingClientRect();
-                                                    const [relX, relY] = [(scrollbooster.getState().position.x / 2) + 4 * layoutRect.width , (scrollbooster.getState().position.y / 2) + 6.2 * layoutRect.height];
+                                                    const [relX, relY] = [(scrollbooster.getState().position.x / 2) + 4 * layoutRect.width, (scrollbooster.getState().position.y / 2) + 6.2 * layoutRect.height];
                                                     this.prismaZoom.current.zoomToZone(relX, relY, layoutRect.width, layoutRect.height);
                                                 }
                                             }}
@@ -95,11 +69,6 @@ class App extends Component {
                                         </PrismaZoom>
                                     </div>
                                 </div>
-                                <button onClick={() => {
-                                    if (scrollbooster) {
-                                        console.log(scrollbooster.getState());
-                                    }
-                                }}>Click me!</button>
                             </>
                         )}
                     </ScrollBoost>

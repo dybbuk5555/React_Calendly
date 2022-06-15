@@ -43,8 +43,6 @@ export default function App() {
               Porque “Alimentar lo bueno de la vida todos los días” está en nuestro ADN y queremos compartirlo contigo.
             </p>
           </div>
-
-          
         <Map />
         </div>
         <div className="container mx-auto mt-5" id="mondo_as">
@@ -80,8 +78,8 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mt-20" id="agenda">
-          <div className="text-left px-24 pt-32">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mt-10 mb-2" id="agenda">
+          <div className="text-left px-24">
             <h1 className="text-2xl font-extrabold md:text-3xl text-title">
               AGENDA UNA VISITA
             </h1>
@@ -94,6 +92,7 @@ export default function App() {
             <p className="text-base text-general">
               Agenda aquí tu visita y una coordinadora guía te conducirá en un recorrido personalizado, donde te acompañará y responderá todas tus preguntas.
             </p>
+            <div className="calendly-inline-widget min-w-xs mt-2 h-64" data-url="https://calendly.com/agrosuper-skyview?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=ff9200" ></div>
           </div>
           <div>
             <img src={agenda} className="w-5/6 h-auto" alt="agenda" />
