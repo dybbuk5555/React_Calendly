@@ -64,14 +64,14 @@ class App extends Component {
                                     </div>
                                 </div>
                                 <div className="overflow-hidden w-full h-container mx-auto" ref={viewport}>
-                                    
+                                    <div>
                                         <PrismaZoom className="App-zoom" onZoomChange={this.onZoomChange} maxZoom={2} ref={this.prismaZoom}>
-                                            <div>
+                                            
                                                 <img className=" max-w-none w-map h-auto" src={map} alt="map" />
                                                 <img className="animate-cloud max-w-none w-cloud h-auto absolute top-0" src={cloud} id="cloud" alt="cloud" />
-                                            </div>
+                                            
                                         </PrismaZoom>
-                                    
+                                    </div>
                                 </div>
                             </>
                         )}
