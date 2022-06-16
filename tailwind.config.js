@@ -127,6 +127,7 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      cloud: 'cloud 140s linear infinite',
     },
     aspectRatio: {
       auto: 'auto',
@@ -596,6 +597,14 @@ module.exports = {
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
         },
       },
+      cloud: {
+        '0%, 100%': {
+          transform: 'translate(0, -30px)',
+        },
+        '50%': {
+          transform: 'translate(-2000px, -30px)',
+        },
+      }
     },
     letterSpacing: {
       tighter: '-0.05em',
@@ -933,6 +942,7 @@ module.exports = {
       max: 'max-content',
       fit: 'fit-content',
       map: '4000px',
+      cloud: '3000px',
     }),
     willChange: {
       auto: 'auto',

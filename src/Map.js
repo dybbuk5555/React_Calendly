@@ -2,7 +2,9 @@ import React, { Component, createRef } from 'react';
 import PrismaZoom from 'react-prismazoom';
 import { ScrollBoost } from "react-scrollbooster";
 
+import "./Map.css";
 import map from "./assets/map.png";
+import cloud from "./assets/cloud.png";
 
 class App extends Component {
     constructor(props) {
@@ -12,7 +14,6 @@ class App extends Component {
             zoom: 1,
         }
     }
-
     onZoomChange = (zoom) => {
         this.setState({ zoom })
     }
@@ -62,12 +63,15 @@ class App extends Component {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="overflow-hidden w-full h-container" ref={viewport}>
-                                    <div>
+                                <div className="overflow-hidden w-full h-container mx-auto" ref={viewport}>
+                                    
                                         <PrismaZoom className="App-zoom" onZoomChange={this.onZoomChange} maxZoom={2} ref={this.prismaZoom}>
-                                            <img className=" max-w-none w-map h-auto px-10" src={map} alt="map" />
+                                            <div>
+                                                <img className=" max-w-none w-map h-auto" src={map} alt="map" />
+                                                <img className="animate-cloud max-w-none w-cloud h-auto absolute top-0" src={cloud} id="cloud" alt="cloud" />
+                                            </div>
                                         </PrismaZoom>
-                                    </div>
+                                    
                                 </div>
                             </>
                         )}
